@@ -90,6 +90,19 @@ public class ToileController implements Initializable {
         point5 = new Circle(radius, BLACK);
         point6 = new Circle(radius, BLACK);
         radar.getChildren().addAll(point1, point2, point3, point4, point5, point6);
+        ligne1 = new Line();
+        ligne1.setStyle("-fx-stroke: BLACK");
+        ligne2 = new Line();
+        ligne2.setStyle("-fx-stroke: BLACK");
+        ligne3 = new Line();
+        ligne3.setStyle("-fx-stroke: BLACK");
+        ligne4 = new Line();
+        ligne4.setStyle("-fx-stroke: BLACK");
+        ligne5 = new Line();
+        ligne5.setStyle("-fx-stroke: BLACK");
+        ligne6 = new Line();
+        ligne6.setStyle("-fx-stroke: BLACK");
+        radar.getChildren().addAll(ligne1, ligne2, ligne3, ligne4, ligne5, ligne6);
     }
 
     int getXRadarChart(double value, int axe ){
