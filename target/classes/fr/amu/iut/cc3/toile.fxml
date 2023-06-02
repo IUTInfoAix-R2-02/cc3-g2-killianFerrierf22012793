@@ -7,12 +7,12 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<HBox id="scene" prefHeight="434.0" prefWidth="709.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.amu.iut.cc3.ToileController">
-    <Pane prefHeight="443.0" prefWidth="399.0">
+<HBox id="scene" prefHeight="434.0" prefWidth="709.0" spacing="20.0" style="-fx-background-color: #bbcffa" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.amu.iut.cc3.ToileController">
+    <Pane fx:id="radar" prefHeight="443.0" prefWidth="399.0">
         <Circle centerX="200.0" centerY="200.0" radius="200.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="150.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="100.0" styleClass="toile" />
-        <Circle fx:id="radar" centerX="200.0" centerY="200.0" radius="50.0" styleClass="toile" />
+        <Circle centerX="200.0" centerY="200.0" radius="50.0" styleClass="toile" />
         <Group layoutX="195.0" layoutY="195.0">
             <Line endX="10.0" endY="5.0" startY="5.0" styleClass="croix" />
             <Line endX="5.0" endY="10.0" startX="5.0" styleClass="croix" />
