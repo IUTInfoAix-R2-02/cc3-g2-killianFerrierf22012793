@@ -83,12 +83,13 @@ public class ToileController implements Initializable {
         comp4 = -1;
         comp5 = -1;
         comp6 = -1;
-        inputComp1 = new TextField();
-        inputComp2 = new TextField();
-        inputComp3 = new TextField();
-        inputComp4 = new TextField();
-        inputComp5 = new TextField();
-        inputComp6 = new TextField();
+        point1 = new Circle(radius, BLACK);
+        point2 = new Circle(radius, BLACK);
+        point3 = new Circle(radius, BLACK);
+        point4 = new Circle(radius, BLACK);
+        point5 = new Circle(radius, BLACK);
+        point6 = new Circle(radius, BLACK);
+        radar.getChildren().addAll(point1, point2, point3, point4, point5, point6);
     }
 
     int getXRadarChart(double value, int axe ){
@@ -123,12 +124,20 @@ public class ToileController implements Initializable {
 
     public void viderAction(ActionEvent actionEvent) {
         radar.getChildren().removeAll(point1, point2, point3, point4, point5, point6, ligne1, ligne2, ligne3, ligne4, ligne5, ligne6);
-        inputComp1.setText("");
-        inputComp2.setText("");
-        inputComp3.setText("");
-        inputComp4.setText("");
-        inputComp5.setText("");
-        inputComp6.setText("");
+        textFieldValue = 0;
+        comp1 = -1;
+        comp2 = -1;
+        comp3 = -1;
+        comp4 = -1;
+        comp5 = -1;
+        comp6 = -1;
+        point1 = new Circle(radius, BLACK);
+        point2 = new Circle(radius, BLACK);
+        point3 = new Circle(radius, BLACK);
+        point4 = new Circle(radius, BLACK);
+        point5 = new Circle(radius, BLACK);
+        point6 = new Circle(radius, BLACK);
+        radar.getChildren().addAll(point1, point2, point3, point4, point5, point6);
     }
 
     public float retourneTextFieldValue(KeyEvent actionEvent){
@@ -137,7 +146,6 @@ public class ToileController implements Initializable {
             if (actionEvent.getSource() instanceof TextField) {
                 TextField textField = (TextField) actionEvent.getSource();
                 String textFieldValueString = textField.getText();
-                actionEvent.getClass().
                 try {
                     textFieldValue = Float.parseFloat(textFieldValueString);
                 } catch (NumberFormatException e) {
@@ -153,8 +161,8 @@ public class ToileController implements Initializable {
         float value = retourneTextFieldValue(actionEvent);
         if (value!=-1 && value <= 20) {
             comp1 = value;
-            point1 = new Circle(getXRadarChart(comp1,1), getYRadarChart(comp1, 1), radius, BLACK);
-            radar.getChildren().add(point1);
+            point1.setCenterX(getXRadarChart(comp1,1));
+            point1.setCenterY(getYRadarChart(comp1, 1));
         }
     }
 
@@ -162,8 +170,8 @@ public class ToileController implements Initializable {
         float value = retourneTextFieldValue(actionEvent);
         if (value!=-1 && value <= 20) {
             comp2 = value;
-            point2 = new Circle(getXRadarChart(comp2,2), getYRadarChart(comp2, 2), radius, BLACK);
-            radar.getChildren().add(point2);
+            point2.setCenterX(getXRadarChart(comp2,2));
+            point2.setCenterY(getYRadarChart(comp2, 2));
 
         }
     }
@@ -172,8 +180,8 @@ public class ToileController implements Initializable {
         float value = retourneTextFieldValue(actionEvent);
         if (value!=-1 && value <= 20) {
             comp3 = value;
-            point3 = new Circle(getXRadarChart(comp3,3), getYRadarChart(comp3, 3), radius, BLACK);
-            radar.getChildren().add(point3);
+            point3.setCenterX(getXRadarChart(comp3,3));
+            point3.setCenterY(getYRadarChart(comp3, 3));
         }
     }
 
@@ -181,8 +189,8 @@ public class ToileController implements Initializable {
         float value = retourneTextFieldValue(actionEvent);
         if (value!=-1 && value <= 20) {
             comp4 = value;
-            point4 = new Circle(getXRadarChart(comp4,4), getYRadarChart(comp4, 4), radius, BLACK);
-            radar.getChildren().add(point4);
+            point4.setCenterX(getXRadarChart(comp4,4));
+            point4.setCenterY(getYRadarChart(comp4, 4));
         }
     }
 
@@ -190,8 +198,8 @@ public class ToileController implements Initializable {
         float value = retourneTextFieldValue(actionEvent);
         if (value!=-1 && value <= 20) {
             comp5 = value;
-            point5 = new Circle(getXRadarChart(comp5,5), getYRadarChart(comp5, 5), radius, BLACK);
-            radar.getChildren().add(point5);
+            point5.setCenterX(getXRadarChart(comp5,5));
+            point5.setCenterY(getYRadarChart(comp5, 5));
         }
     }
 
@@ -199,8 +207,8 @@ public class ToileController implements Initializable {
         float value = retourneTextFieldValue(actionEvent);
         if (value!=-1 && value <= 20) {
             comp6 = value;
-            point6 = new Circle(getXRadarChart(comp6,6), getYRadarChart(comp6, 6), radius, BLACK);
-            radar.getChildren().add(point6);
+            point6.setCenterX(getXRadarChart(comp6,6));
+            point6.setCenterY(getYRadarChart(comp6, 6));
         }
     }
 }
